@@ -349,7 +349,7 @@ extension CGSize {
         return NSScreen.main?.frame.size ?? .zero
 #else
         // Explicit CGSize for visionOS for our custom app.
-        return CGSize(width: 850, height 500)
+        return CGSize(width: 850, height: 500)
 #endif
     }
 }
