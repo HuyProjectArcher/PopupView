@@ -341,12 +341,15 @@ extension CGPoint {
 extension CGSize {
 
     static var screenSize: CGSize {
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || 
         return UIScreen.main.bounds.size
 #elseif os(watchOS)
         return WKInterfaceDevice.current().screenBounds.size
 #elseif os(macOS)
         return NSScreen.main?.frame.size ?? .zero
+#else
+        // Explicit CGSize for visionOS for our custom app.
+        return CGSize(width: 850, height 500)
 #endif
     }
 }
