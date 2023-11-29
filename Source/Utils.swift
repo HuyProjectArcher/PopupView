@@ -341,7 +341,7 @@ extension CGPoint {
 extension CGSize {
 
     static var screenSize: CGSize {
-#if os(iOS) || os(tvOS) || 
+#if os(iOS) || os(tvOS)
         return UIScreen.main.bounds.size
 #elseif os(watchOS)
         return WKInterfaceDevice.current().screenBounds.size
